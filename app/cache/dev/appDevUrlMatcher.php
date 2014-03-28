@@ -155,6 +155,39 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
         not_BloggerBlogBundle_homepage:
 
+        // BloggerBlogBundle_about
+        if ($pathinfo === '/about') {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_BloggerBlogBundle_about;
+            }
+
+            return array (  '_controller' => 'Blogger\\BlogBundle\\Controller\\PageController::aboutAction',  '_route' => 'BloggerBlogBundle_about',);
+        }
+        not_BloggerBlogBundle_about:
+
+        // BloggerBlogBundle_login
+        if ($pathinfo === '/login') {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_BloggerBlogBundle_login;
+            }
+
+            return array (  '_controller' => 'Blogger\\BlogBundle\\Controller\\PageController::loginAction',  '_route' => 'BloggerBlogBundle_login',);
+        }
+        not_BloggerBlogBundle_login:
+
+        // BloggerBlogBundle_contact
+        if ($pathinfo === '/contact') {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_BloggerBlogBundle_contact;
+            }
+
+            return array (  '_controller' => 'Blogger\\BlogBundle\\Controller\\PageController::contactAction',  '_route' => 'BloggerBlogBundle_contact',);
+        }
+        not_BloggerBlogBundle_contact:
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

@@ -50,19 +50,19 @@ class __TwigTemplate_dc7dd09445321a191d7b1149dfea6a2cd7f15b6e513a6cdde56459ae366
         <section id=\"wrapper\">
             <header id=\"header\">
                 <div class=\"top\">
-                    ";
+                   ";
         // line 22
         $this->displayBlock('navigation', $context, $blocks);
-        // line 31
+        // line 32
         echo "                </div>
 
                 <hgroup>
                     <h2>";
-        // line 34
+        // line 35
         $this->displayBlock('blog_title', $context, $blocks);
         echo "</h2>
                     <h3>";
-        // line 35
+        // line 36
         $this->displayBlock('blog_tagline', $context, $blocks);
         echo "</h3>
                 </hgroup>
@@ -70,29 +70,29 @@ class __TwigTemplate_dc7dd09445321a191d7b1149dfea6a2cd7f15b6e513a6cdde56459ae366
 
             <section class=\"main-col\">
                 ";
-        // line 40
-        $this->displayBlock('body', $context, $blocks);
         // line 41
+        $this->displayBlock('body', $context, $blocks);
+        // line 42
         echo "            </section>
             <aside class=\"sidebar\">
                 ";
-        // line 43
-        $this->displayBlock('sidebar', $context, $blocks);
         // line 44
+        $this->displayBlock('sidebar', $context, $blocks);
+        // line 45
         echo "            </aside>
 
             <div id=\"footer\">
                 ";
-        // line 47
+        // line 48
         $this->displayBlock('footer', $context, $blocks);
-        // line 50
+        // line 51
         echo "            </div>
         </section>
 
         ";
-        // line 53
-        $this->displayBlock('javascripts', $context, $blocks);
         // line 54
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 55
         echo "    </body>
 </html>
 ";
@@ -121,47 +121,64 @@ class __TwigTemplate_dc7dd09445321a191d7b1149dfea6a2cd7f15b6e513a6cdde56459ae366
     public function block_navigation($context, array $blocks = array())
     {
         // line 23
-        echo "                        <nav>
-                            <ul class=\"navigation\">
-                                <li><a href=\"#\">Home</a></li>
-                                <li><a href=\"#\">About</a></li>
-                                <li><a href=\"#\">Contact</a></li>
-                            </ul>
-                        </nav>
+        echo "                     <nav>
+                     <ul class=\"navigation\">
+                        <li><a href=\"";
+        // line 25
+        echo $this->env->getExtension('routing')->getPath("BloggerBlogBundle_homepage");
+        echo "\">Home</a></li>
+                        <li><a href=\"";
+        // line 26
+        echo $this->env->getExtension('routing')->getPath("BloggerBlogBundle_login");
+        echo "\">Login</a></li>
+                        <li><a href=\"";
+        // line 27
+        echo $this->env->getExtension('routing')->getPath("BloggerBlogBundle_about");
+        echo "\">About</a></li>
+                        <li><a href=\"";
+        // line 28
+        echo $this->env->getExtension('routing')->getPath("BloggerBlogBundle_contact");
+        echo "\">Contact</a></li>
+                     </ul>
+                    </nav>
                     ";
     }
 
-    // line 34
+    // line 35
     public function block_blog_title($context, array $blocks = array())
     {
-        echo "<a href=\"#\">symblog</a>";
+        echo "<a href=\"";
+        echo $this->env->getExtension('routing')->getPath("BloggerBlogBundle_homepage");
+        echo "\">Teddy's Blog</a>";
     }
 
-    // line 35
+    // line 36
     public function block_blog_tagline($context, array $blocks = array())
     {
-        echo "<a href=\"#\">creating a blog in Symfony2</a>";
+        echo "<a href=\"";
+        echo $this->env->getExtension('routing')->getPath("BloggerBlogBundle_homepage");
+        echo "\">Un bout de chemin sur Internet</a>";
     }
 
-    // line 40
+    // line 41
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 43
+    // line 44
     public function block_sidebar($context, array $blocks = array())
     {
     }
 
-    // line 47
+    // line 48
     public function block_footer($context, array $blocks = array())
     {
-        // line 48
+        // line 49
         echo "                    Symfony2 blog tutorial - created by Teddy
                 ";
     }
 
-    // line 53
+    // line 54
     public function block_javascripts($context, array $blocks = array())
     {
     }
@@ -178,6 +195,6 @@ class __TwigTemplate_dc7dd09445321a191d7b1149dfea6a2cd7f15b6e513a6cdde56459ae366
 
     public function getDebugInfo()
     {
-        return array (  165 => 53,  160 => 48,  157 => 47,  152 => 43,  147 => 40,  141 => 35,  135 => 34,  124 => 23,  121 => 22,  115 => 13,  111 => 11,  108 => 10,  102 => 6,  96 => 54,  94 => 53,  89 => 50,  87 => 47,  82 => 44,  80 => 43,  76 => 41,  74 => 40,  66 => 35,  62 => 34,  57 => 31,  55 => 22,  44 => 15,  42 => 10,  35 => 6,  31 => 5,  28 => 1,);
+        return array (  182 => 54,  177 => 49,  174 => 48,  169 => 44,  164 => 41,  156 => 36,  148 => 35,  140 => 28,  136 => 27,  132 => 26,  128 => 25,  124 => 23,  121 => 22,  115 => 13,  111 => 11,  108 => 10,  102 => 6,  96 => 55,  94 => 54,  89 => 51,  87 => 48,  82 => 45,  80 => 44,  76 => 42,  74 => 41,  66 => 36,  62 => 35,  57 => 32,  55 => 22,  44 => 15,  42 => 10,  35 => 6,  28 => 1,);
     }
 }

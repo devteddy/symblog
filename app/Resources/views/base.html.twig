@@ -19,20 +19,21 @@
         <section id="wrapper">
             <header id="header">
                 <div class="top">
-                    {% block navigation %}
-                        <nav>
-                            <ul class="navigation">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </nav>
+                   {% block navigation %}
+                     <nav>
+                     <ul class="navigation">
+                        <li><a href="{{ path('BloggerBlogBundle_homepage') }}">Home</a></li>
+                        <li><a href="{{ path('BloggerBlogBundle_login') }}">Login</a></li>
+                        <li><a href="{{ path('BloggerBlogBundle_about') }}">About</a></li>
+                        <li><a href="{{ path('BloggerBlogBundle_contact') }}">Contact</a></li>
+                     </ul>
+                    </nav>
                     {% endblock %}
                 </div>
 
                 <hgroup>
-                    <h2>{% block blog_title %}<a href="#">symblog</a>{% endblock %}</h2>
-                    <h3>{% block blog_tagline %}<a href="#">creating a blog in Symfony2</a>{% endblock %}</h3>
+                    <h2>{% block blog_title %}<a href="{{ path('BloggerBlogBundle_homepage') }}">Teddy's Blog</a>{% endblock %}</h2>
+                    <h3>{% block blog_tagline %}<a href="{{ path('BloggerBlogBundle_homepage') }}">Un bout de chemin sur Internet</a>{% endblock %}</h3>
                 </hgroup>
             </header>
 
